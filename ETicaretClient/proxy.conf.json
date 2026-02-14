@@ -1,0 +1,14 @@
+{
+    "/api": {
+        "target": "http://localhost:44373",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug"
+    },
+    "/wwwroot": {
+        "target": "http://localhost:44373",
+        "secure": false,
+        "changeOrigin": true,
+        "logLevel": "debug"
+    }
+}

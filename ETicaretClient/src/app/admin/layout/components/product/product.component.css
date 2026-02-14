@@ -1,0 +1,16 @@
+.product-container {
+  width: auto;
+  height: 750px;
+  margin: 10px;
+  border: 1px solid #ffffff;
+  /* The background property is added to clearly distinguish the borders between drawer and main
+     content */
+  background: #818181;
+}
+
+.custom-drawer {
+  background-color: white !important;
+  /* Drawer arka planı beyaz */
+  color: black !important;
+  border-radius: 0 !important;
+}

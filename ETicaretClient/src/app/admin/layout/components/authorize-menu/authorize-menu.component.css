@@ -1,0 +1,94 @@
+.mat-tree-node button[disabled] {
+  visibility: hidden;
+}
+
+mat-tree {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+mat-tree-node {
+  min-height: 48px;
+  padding: 8px 0;
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+}
+
+mat-tree-node:hover {
+  background: rgba(102, 126, 234, 0.05);
+  border-left-color: #667eea;
+  transform: translateX(3px);
+}
+
+/* Toggle button */
+mat-tree-node button[matTreeNodeToggle] {
+  color: #667eea;
+  transition: all 0.3s ease;
+}
+
+mat-tree-node button[matTreeNodeToggle]:hover {
+  background: rgba(102, 126, 234, 0.1);
+  transform: rotate(90deg);
+}
+
+mat-tree-node button[matTreeNodeToggle] mat-icon {
+  font-size: 24px;
+  transition: transform 0.3s ease;
+}
+
+/* Rol ata button */
+mat-tree-node .btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  color: white;
+  font-weight: 500;
+  font-size: 13px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+mat-tree-node .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+mat-tree-node .btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Node text */
+mat-tree-node {
+  font-size: 15px;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+/* Parent nodes (with children) */
+mat-tree-node[matTreeNodeToggle] {
+  font-weight: 600;
+  color: #1a202c;
+}
+
+/* Expanded node icon rotation */
+mat-tree-node.mat-tree-node-expanded button[matTreeNodeToggle] mat-icon {
+  transform: rotate(0deg);
+}
+
+/* Add some spacing between nodes */
+mat-tree-node + mat-tree-node {
+  margin-top: 4px;
+}
+
+/* Nested level indentation styling */
+mat-tree-node[aria-level="2"] {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+mat-tree-node[aria-level="3"] {
+  background: rgba(255, 255, 255, 0.7);
+}

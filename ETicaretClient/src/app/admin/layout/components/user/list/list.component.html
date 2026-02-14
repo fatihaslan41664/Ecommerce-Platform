@@ -1,0 +1,66 @@
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource">
+
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>ID</th>
+      <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+    </ng-container>
+
+    <!-- Email Column -->
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef>E-posta</th>
+      <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+    </ng-container>
+
+    <!-- Name urname Column -->
+    <ng-container matColumnDef="nameSurname">
+      <th mat-header-cell *matHeaderCellDef>Ad Soyad</th>
+      <td mat-cell *matCellDef="let element">{{ element.nameSurname }}</td>
+    </ng-container>
+
+    <!-- TwoFactor Column -->
+    <ng-container matColumnDef="twoFactorAuthEnabled">
+      <th mat-header-cell *matHeaderCellDef>Çift aşamalı doğrulama</th>
+      <td mat-cell *matCellDef="let element">
+        <img
+          *ngIf="element.twoFactorAuthEnabled"
+          src="../../../../../../assets/completedpng.png"
+          width="25" height="25"
+        />
+        <span *ngIf="!element.twoFactorAuthEnabled">—</span>
+      </td>
+    </ng-container>
+
+    <!--authentication-->
+    <ng-container matColumnDef="atama">
+      <th mat-header-cell *matHeaderCellDef>Rol Ata</th>
+      <td mat-cell *matCellDef="let element">
+        <button class="btn btn-primary" (click)="assignRole(element.id)">Rol Ata</button>
+      </td>
+    </ng-container>
+
+    <!-- DeleteColumn -->
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef>Sil</th>
+      <td
+        mat-cell
+        *matCellDef="let element"
+        [id]="element.id"
+        appDelete
+        controller="users"
+        style="cursor: pointer;"
+      ></td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+<!-- Pagination -->
+  <mat-paginator
+    [pageSizeOptions]="[5, 10, 20]"
+    [length]="totalcount"
+    showFirstLastButtons
+    aria-label="Kullanıcı sayfası seç">
+  </mat-paginator>
+</div>

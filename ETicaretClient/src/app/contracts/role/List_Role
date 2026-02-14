@@ -1,0 +1,4 @@
+export interface List_role {
+    id: string;
+    name: string;
+}

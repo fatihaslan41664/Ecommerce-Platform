@@ -1,0 +1,193 @@
+#######################
+# .NET (EticaretAPI)
+#######################
+
+## Build sonuçları
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+## Visual Studio cache/options
+.vs/
+.vscode/
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+## .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+## Entity Framework
+*.dbmdl
+*.jfm
+
+## NuGet Packages
+*.nupkg
+*.snupkg
+**/packages/*
+!**/packages/build/
+.nuget/
+
+## Test Results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+## ReSharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+#######################
+# Angular (ETicaretClient)
+#######################
+
+## Bağımlılıklar
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+yarn.lock
+
+## Derlenmiş çıktılar
+dist/
+out-tsc/
+tmp/
+temp/
+
+## Angular cache
+.angular/
+
+## Test coverage
+coverage/
+*.lcov
+.nyc_output
+
+#######################
+# Hassas Bilgiler - KRİTİK!
+#######################
+
+## appsettings - SPESİFİK dosyalar
+**/appsettings.Development.json
+**/appsettings.Production.json
+**/appsettings.Local.json
+**/appsettings.Staging.json
+**/appsettings.Secret.json
+
+## ✅ ŞABLONU GİT'E GÖNDERMELİYİZ!
+!**/appsettings.json
+
+## Angular environment
+**/.env
+**/.env.local
+**/.env.*.local
+
+## AWS Credentials
+**/.aws/
+**/aws-credentials.json
+
+## Secrets
+secrets.json
+
+## SSL sertifikaları
+*.pfx
+*.p12
+
+#######################
+# IDEs ve Editors
+#######################
+
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+#######################
+# System Files
+#######################
+
+## Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+## macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+## Linux
+*~
+*.swp
+*.swo
+
+#######################
+# Logs
+#######################
+
+logs/
+*.log
+
+#######################
+# Runtime data
+#######################
+
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+#######################
+# Backup ve Temporary
+#######################
+
+*.bak
+*.old
+*.cache
+*.temp
+*.tmp
+
+#######################
+# Database (Local)
+#######################
+
+*.db
+*.sqlite
+*.sqlite3
+*.mdf
+*.ldf
+
+#######################
+# Uploaded Images (wwwroot/amazon-images)
+#######################
+
+## Sadece upload klasörlerini ignore et
+**/wwwroot/amazon-images/*
+**/wwwroot/uploads/*
+
+## Assets klasörlerindeki test resimleri ignore et
+**/assets/*.jpg
+**/assets/*.JPG
+**/assets/*.jpeg
+**/assets/*.JPEG
+**/assets/*.gif
+**/assets/*.GIF

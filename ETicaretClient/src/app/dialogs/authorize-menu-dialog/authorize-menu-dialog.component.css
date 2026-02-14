@@ -1,0 +1,188 @@
+/* Dialog Container */
+:host ::ng-deep .mat-mdc-dialog-container {
+    min-width: 650px;
+    max-width: 800px;
+    min-height: 500px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Header */
+.dialog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 24px 16px 24px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.dialog-header h2 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+    flex: 1;
+}
+
+.selected-badge {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Dialog Content */
+mat-dialog-content {
+    padding: 24px !important;
+    min-height: 350px;
+    max-height: 500px;
+    overflow-y: auto;
+    background: #f8f9fa;
+}
+
+.dialog-description {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 20px 0;
+    padding: 12px 16px;
+    background: #e3f2fd;
+    border-left: 4px solid #2196f3;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #1976d2;
+}
+
+.dialog-description mat-icon {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+}
+
+/* Roles Container */
+.roles-container {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+mat-selection-list {
+    padding: 0 !important;
+}
+
+/* Role Items */
+.role-item {
+    height: auto !important;
+    min-height: 60px !important;
+    padding: 0 !important;
+    border-bottom: 1px solid #e0e0e0;
+    transition: all 0.2s ease;
+}
+
+.role-item:last-child {
+    border-bottom: none;
+}
+
+.role-item:hover {
+    background: #f5f5f5 !important;
+}
+
+.role-item.mat-mdc-list-option-selected {
+    background: #e8f5e9 !important;
+}
+
+.role-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 16px 20px;
+}
+
+.role-name {
+    font-size: 15px;
+    font-weight: 500;
+    color: #333;
+}
+
+.assigned-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #4caf50;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.assigned-badge mat-icon {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+/* Actions */
+mat-dialog-actions {
+    padding: 16px 24px !important;
+    gap: 12px;
+    background: white;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+mat-dialog-actions button {
+    min-width: 120px;
+    height: 42px;
+    font-weight: 500;
+    border-radius: 6px;
+}
+
+mat-dialog-actions button mat-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
+}
+
+mat-dialog-actions button[mat-raised-button] {
+    box-shadow: 0 2px 8px rgba(103, 58, 183, 0.3);
+}
+
+/* Scrollbar */
+mat-dialog-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+mat-dialog-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+mat-dialog-content::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+mat-dialog-content::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    :host ::ng-deep .mat-mdc-dialog-container {
+        min-width: 90vw;
+    }
+    
+    .dialog-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}

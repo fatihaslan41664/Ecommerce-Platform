@@ -1,0 +1,8 @@
+.custom-drawer {
+  width: 400px !important;
+  min-width: 400px !important;
+}
+
+.role-container {
+  height: 100vh;
+}

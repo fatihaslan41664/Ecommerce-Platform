@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+    <div class="col-md-10 d-flex flex-wrap justify-content-center">
+
+        <div class="card m-2" style="width: 270px; height: 310px;" *ngFor="let item of produtcs">
+            <div class="img-container">
+                <img class="card-img-top" style="width: 250px; height: 140.625px; margin-left: 10px;object-fit: cover;margin-top: 10px"
+                    [src]="item.imagePath ? item.imagePath : '../../../../../assets/glob_prod_img.png'">
+            </div>
+
+            <div class="card-body text-center">
+                <h5 class="card-title">{{item.name}}</h5>
+                <p class="card-text">
+                    Fiyat : {{ item.price | currency:'TRY':'symbol':'1.1-1' }} <br>
+                    Stok : {{item.stock}}
+                </p>
+                <button href="#" class="btn btn-success" (click)="addToBasket(item)">Sepete Ekle</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li><a class="page-link">{{currentPageNo}}/{{TotalPageCount}} </a></li>
+                <li class="page-item"><a class="page-link"
+                        [routerLink]="['/products',currentPageNo - 1 <=0 ? 1 : currentPageNo - 1]">ÖncekiSayfa</a></li>
+
+                <li class="page-item" *ngFor="let pageNo of pageList" [class.active]="currentPageNo === pageNo">
+                    <a class="page-link" [routerLink]="['/products',pageNo]">
+                        {{pageNo}}
+                    </a>
+                </li>
+
+                <li class="page-item"><a class="page-link"
+                        [routerLink]="['/products',currentPageNo >=TotalPageCount ? currentPageNo : currentPageNo + 1]">SonrakiSayfa</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="col-md-4"></div>
+</div>

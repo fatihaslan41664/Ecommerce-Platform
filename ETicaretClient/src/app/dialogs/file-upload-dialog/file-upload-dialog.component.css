@@ -1,0 +1,132 @@
+/* Angular Material Dialog Styling - Global styles.css dosyasına ekleyin */
+
+/* Tüm olasılıkları kapsayan selector'lar */
+.custom-file-upload-dialog,
+.custom-file-upload-dialog .mat-mdc-dialog-container,
+.custom-file-upload-dialog .mat-dialog-container {
+    border-radius: 12px !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15) !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+}
+
+/* Dialog title */
+.custom-file-upload-dialog h2[mat-dialog-title],
+.custom-file-upload-dialog .mat-mdc-dialog-title {
+    background: linear-gradient(135deg, #ff4757, #ff3838) !important;
+    color: white !important;
+    padding: 20px 24px !important;
+    margin: 0 !important;
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    text-align: center !important;
+    position: relative !important;
+}
+
+.custom-file-upload-dialog h2[mat-dialog-title]::before {
+    content: '⚠️';
+    display: block;
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+/* Dialog content */
+.custom-file-upload-dialog mat-dialog-content,
+.custom-file-upload-dialog .mat-mdc-dialog-content {
+    padding: 32px 24px !important;
+    text-align: center !important;
+    background: #fafafa !important;
+    margin: 0 !important;
+}
+
+.custom-file-upload-dialog mat-dialog-content p {
+    margin: 0 !important;
+    font-size: 16px !important;
+    color: #424242 !important;
+    line-height: 1.5 !important;
+    font-weight: 500 !important;
+}
+
+/* Dialog actions */
+.custom-file-upload-dialog mat-dialog-actions,
+.custom-file-upload-dialog .mat-mdc-dialog-actions {
+    padding: 16px 24px 24px !important;
+    display: flex !important;
+    gap: 12px !important;
+    justify-content: center !important;
+    background: white !important;
+    margin: 0 !important;
+}
+
+/* Button base styles */
+.custom-file-upload-dialog button[mat-button],
+.custom-file-upload-dialog .mat-mdc-button {
+    padding: 12px 24px !important;
+    border-radius: 8px !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    transition: all 0.2s ease !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    min-width: 80px !important;
+    line-height: 1 !important;
+}
+
+/* Confirm button (first button - Evet) */
+.custom-file-upload-dialog button[mat-button]:first-child {
+    background: linear-gradient(135deg, #ff4757, #ff3838) !important;
+    color: white !important;
+    box-shadow: 0 4px 15px rgba(255, 71, 87, 0.3) !important;
+}
+
+.custom-file-upload-dialog button[mat-button]:first-child:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(255, 71, 87, 0.4) !important;
+    background: linear-gradient(135deg, #ff3838, #ff2929) !important;
+}
+
+/* Cancel button (last button - Hayır) */
+.custom-file-upload-dialog button[mat-button]:last-child {
+    background: #f8f9fa !important;
+    color: #6c757d !important;
+    border: 2px solid #dee2e6 !important;
+}
+
+.custom-file-upload-dialog button[mat-button]:last-child:hover {
+    background: #e9ecef !important;
+    color: #495057 !important;
+    border-color: #adb5bd !important;
+    transform: translateY(-1px) !important;
+}
+
+/* Animation */
+.custom-file-upload-dialog {
+    animation: slideIn 0.3s ease-out !important;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .custom-file-upload-dialog {
+        margin: 20px !important;
+    }
+
+    .custom-file-upload-dialog mat-dialog-actions {
+        flex-direction: column !important;
+    }
+
+    .custom-file-upload-dialog button[mat-button] {
+        width: 100% !important;
+    }
+}

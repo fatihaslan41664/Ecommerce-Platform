@@ -1,0 +1,106 @@
+<div class="container login-container">
+    <div class="row justify-content-center">
+        <div class="col-md-9 col-lg-6">
+            <div class="login-card">
+                <div class="login-header">
+                    <h2>🔐 Hoş Geldiniz</h2>
+                    <p>Hesap oluşuturunuz</p>
+                </div>
+                <div class="login-body">
+                    <form [formGroup]="frm" (ngSubmit)="onSubmit(frm.value)">
+                        <div class="form-group">
+                            <label class="form-label">
+                                Ad Soyad
+                            </label>
+                            <input type="text" formControlName="nameSurname" class="form-control"
+                                [ngClass]="{'is-invalid' : components.nameSurname.invalid && components.nameSurname.touched}">
+                            <div *ngIf="components.nameSurname.invalid && components.nameSurname.touched"
+                                class="invalid-feedback">
+                                <span *ngIf="components.nameSurname.errors?.['required']">Ad Soyad zorunludur</span>
+                                <span *ngIf="components.nameSurname.errors?.['minlength']">En az 2 karakter
+                                    olmalıdır</span>
+                                <span *ngIf="components.namedSurname.errors?.['maxlength']">En fazla 50 karakter
+                                    olmalıdır</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">
+                                Kullanıcı Adı
+                            </label>
+                            <input type="text" formControlName="userName" class="form-control"
+                                [ngClass]="{'is-invalid' : components.userName.invalid && components.userName.touched}">
+                            <div *ngIf="components.userName.invalid && components.userName.touched"
+                                class="invalid-feedback">
+                                <span *ngIf="components.userName.errors?.['required']">Kullanıcı adı
+                                    zorunludur</span>
+                                <span *ngIf="components.userName.errors?.['minlength']">En az 2 karakter
+                                    olmalıdır</span>
+                                <span *ngIf="components.userName.errors?.['maxlength']">En fazla 50 karakter
+                                    olmalıdır</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">
+                                📧 E-posta Adresi
+                            </label>
+                            <input type="email" formControlName="email" class="form-control"
+                                placeholder="ornek@email.com"
+                                [ngClass]="{'is-invalid' : components.email.invalid && components.email.touched}">
+                            <div *ngIf="components.email.invalid && components.email.touched" class="invalid-feedback">
+                                <span *ngIf="components.email.errors?.['required']">E-posta zorunludur</span>
+                                <span *ngIf="components.email.errors?.['email']">Geçerli bir e-posta adresi
+                                    giriniz</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">
+                                🔑 Şifre
+                            </label>
+                            <input [type]="passwordVisible ? 'text' : 'password'" formControlName="password"
+                                class="form-control" id="passwordInput" placeholder="••••••••"
+                                [ngClass]="{'is-invalid' : components.password.invalid && components.password.touched}">
+                            <span class="password-toggle" (click)="togglePassword()">
+                                {{ passwordVisible ? '🙈' : '👁️' }}
+                            </span>
+                            <div *ngIf="components.password.invalid && components.password.touched"
+                                class="invalid-feedback">
+                                <span *ngIf="components.password.errors?.['required']">Şifre zorunludur</span>
+                                <span *ngIf="components.password.errors?.['minlength']">Şifre en az 10 karakter
+                                    olmalıdır</span>
+                                <span *ngIf="components.password.errors?.['maxlength']">Şifre en fazla 16 karakter
+                                    olmalıdır</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">
+                                🔑 Şifre Tekrar
+                            </label>
+                            <input [type]="passwordVisible ? 'text' : 'password'" formControlName="coniformPassword"
+                                class="form-control" id="passwordAgainInput" placeholder="••••••••"
+                                [ngClass]="{'is-invalid' : (components.coniformPassword.invalid && components.coniformPassword.touched) || (frm.errors?.['notSame'] && components.coniformPassword.touched)}">
+                            <span class="password-toggle" (click)="togglePassword()">
+                                {{ passwordVisible ? '🙈' : '👁️' }}
+                            </span>
+                            <div *ngIf="components.coniformPassword.invalid && components.coniformPassword.touched"
+                                class="invalid-feedback">
+                                <span *ngIf="components.coniformPassword.errors?.['required']">Şifre tekrar
+                                    zorunludur</span>
+                            </div>
+                            <div *ngIf="frm.errors?.['notSame'] && components.coniformPassword.touched"
+                                class="invalid-feedback" style="display: block;">
+                                Şifreler eşleşmiyor
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Kayıt Ol</button>
+
+                        <div class="text-center mt-3">
+                            <p class="mb-0">Zaten hesabınız var mı? <a routerLink="/uicomponent/login" class="text-primary">Giriş
+                                    Yap</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

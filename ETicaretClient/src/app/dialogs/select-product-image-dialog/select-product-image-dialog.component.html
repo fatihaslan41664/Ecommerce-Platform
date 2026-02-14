@@ -1,0 +1,26 @@
+<h2 mat-dialog-title>Ürün Resmi Seçin</h2>
+<mat-dialog-content class="mat-typography">
+
+
+
+  <app-file-upload [options]="options"></app-file-upload>
+
+  <mat-card class="product-image-card" appearance="outlined" *ngFor="let image of images">
+    <mat-card-header>
+      <h5>vitrin resmi<br><br></h5>
+      
+      <input type="radio" name="img" (click)="showCase(image.id)">
+    </mat-card-header>
+    <img style="height: 150px; width: 200px;" mat-card-image [src]="image.path" [alt]="image.fileName">
+    <mat-card-content>
+    </mat-card-content>
+    <mat-card-actions>
+      <button matButton class="btn btn-warning" (click)="deleteImage(image.id)">DELETE</button>
+    </mat-card-actions>
+  </mat-card>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button matButton (click)="onCancel()">Cancel</button>
+  <button matButton (click)="onConfirm()" cdkFocusInitial>Tamam</button>
+</mat-dialog-actions>

@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">🛍️ FillArtDesign</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" routerLink="home">🏠 Ana Sayfa</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="products">📦 Ürünler</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="register" *ngIf="!authservice.isauthenticated">✍️ Kayıt Ol</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="login" *ngIf="!authservice.isauthenticated">✍️ Giriş Yap</a>
+                </li>
+                <li class="nav-item" id="cikis">
+                    <a class="nav-link" *ngIf="authservice.isauthenticated" (click)="signOut()">🚪 Çıkış Yap</a>
+                </li>
+                <li class="nav-item" id="admin">
+                    <a class="nav-link" routerLink="/admin/dashboard">⚙️ Admin</a>
+                </li>
+                <div class="d-flex">
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-primary" (click)="loadComponent()" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">
+                            Sepetim
+                        </button>
+                    </li>
+                </div>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="modal fade" tabindex="-1" id="exampleModal">
+    <div class="modal-dialog modal-xl">
+        <ng-template appDynamicloadComponent></ng-template>
+    </div>
+</div>
+<router-outlet></router-outlet>

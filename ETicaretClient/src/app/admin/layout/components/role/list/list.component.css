@@ -1,0 +1,160 @@
+/* Table container */
+.mat-elevation-z8 {
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12) !important;
+  margin: 20px 0;
+}
+
+/* Table */
+table.mat-mdc-table {
+  width: 100%;
+  background: transparent;
+}
+
+/* Header */
+th.mat-mdc-header-cell {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white !important;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 16px 24px;
+  border: none;
+}
+
+/* Rows */
+tr.mat-mdc-row {
+  transition: all 0.3s ease;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+tr.mat-mdc-row:hover {
+  background: rgba(102, 126, 234, 0.05);
+  transform: scale(1.01);
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.1);
+}
+
+tr.mat-mdc-row:last-child {
+  border-bottom: none;
+}
+
+/* Cells */
+td.mat-mdc-cell {
+  padding: 16px 24px;
+  color: #2c3e50;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+}
+
+/* Icon buttons */
+td.mat-mdc-cell img {
+  transition: all 0.3s ease;
+  filter: grayscale(20%);
+}
+
+td.mat-mdc-cell img:hover {
+  transform: scale(1.2) rotate(5deg);
+  filter: grayscale(0%);
+}
+
+/* Delete button special effect */
+td.mat-mdc-cell[appDelete] {
+  position: relative;
+}
+
+td.mat-mdc-cell[appDelete]::before {
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+td.mat-mdc-cell[appDelete]:hover::before {
+  transform: scale(1.2);
+  filter: brightness(1.2);
+}
+
+/* Paginator */
+mat-paginator {
+  background: #f8f9fa;
+  border-top: 2px solid #667eea;
+  padding: 12px 16px;
+}
+
+mat-paginator .mat-mdc-paginator-container {
+  justify-content: center;
+  padding: 8px 0;
+}
+
+mat-paginator .mat-mdc-paginator-page-size-label,
+mat-paginator .mat-mdc-paginator-range-label {
+  color: #667eea;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+mat-paginator button {
+  color: #667eea;
+  transition: all 0.3s ease;
+}
+
+mat-paginator button:hover {
+  background: rgba(102, 126, 234, 0.1);
+  transform: scale(1.1);
+}
+
+mat-paginator .mat-mdc-select {
+  color: #667eea;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  th.mat-mdc-header-cell,
+  td.mat-mdc-cell {
+    padding: 12px 16px;
+    font-size: 13px;
+  }
+  
+  td.mat-mdc-cell img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Empty state (opsiyonel) */
+.mat-mdc-table .mat-mdc-no-data-row {
+  text-align: center;
+  padding: 40px;
+  color: #9e9e9e;
+  font-style: italic;
+}
+
+/* Striped rows effect (opsiyonel) */
+tr.mat-mdc-row:nth-child(even) {
+  background: rgba(248, 249, 250, 0.5);
+}
+
+/* Loading overlay (opsiyonel) */
+.mat-elevation-z8.loading {
+  position: relative;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.mat-elevation-z8.loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

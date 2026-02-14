@@ -1,0 +1,27 @@
+<h2 mat-dialog-title>Rol Ata</h2>
+
+<mat-dialog-content>
+  <p *ngIf="isLoading">Yükleniyor...</p>
+
+  <mat-selection-list #roleList *ngIf="!isLoading">
+    <mat-list-option
+      *ngFor="let role of roles"
+      [value]="role.name"
+      [selected]="isRoleAssigned(role.name)"
+    >
+      {{ role.name }}
+    </mat-list-option>
+  </mat-selection-list>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="dialogRef.close()">İptal</button>
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="assignRoles()"
+    [disabled]="isLoading"
+  >
+    Kaydet
+  </button>
+</mat-dialog-actions>

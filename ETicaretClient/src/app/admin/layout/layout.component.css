@@ -1,0 +1,322 @@
+/* Ultra Modern Light Admin Container */
+.admin-container {
+    width: auto;
+    height: 800px;
+    margin: 10px;
+    border: none;
+    border-radius: 24px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.3);
+    overflow: hidden;
+    position: relative;
+}
+
+/* Dynamic animated background */
+.admin-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle at 20% 80%, rgba(255, 107, 107, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(78, 205, 196, 0.25) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(255, 195, 113, 0.2) 0%, transparent 50%);
+    backdrop-filter: blur(1px);
+    z-index: 1;
+    pointer-events: none;
+    animation: backgroundShift 10s ease-in-out infinite alternate;
+}
+
+@keyframes backgroundShift {
+    0% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 0.9;
+    }
+}
+
+/* Light Modern Sidebar */
+.admin-container mat-drawer {
+    width: 280px;
+    background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 50%, #e9ecef 100%);
+    backdrop-filter: blur(20px);
+    border: none;
+    border-right: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.08), inset -1px 0 0 rgba(0, 0, 0, 0.05);
+    z-index: 2;
+}
+
+/* Content area with light theme */
+.admin-container mat-drawer-content {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    padding: 0;
+    margin: 0;
+    z-index: 2;
+    position: relative;
+}
+
+/* Router outlet */
+.admin-container mat-drawer-content router-outlet {
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+
+/* Modern Product Container */
+.product-container {
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 249, 250, 0.95) 100%);
+    backdrop-filter: blur(20px);
+    margin: 0;
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Vibrant Product Drawer */
+.product-container mat-drawer {
+    width: 350px;
+    background: linear-gradient(180deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.12) 50%, rgba(255, 195, 113, 0.15) 100%);
+    backdrop-filter: blur(20px);
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 0 20px rgba(0, 0, 0, 0.08), inset -1px 0 0 rgba(255, 255, 255, 0.5);
+}
+
+/* Product main content */
+.product-container mat-drawer-content {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 0;
+    margin: 0;
+    border-left: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Sidebar with modern styling */
+app-sidebar {
+    display: block;
+    height: 100%;
+    padding: 24px;
+    color: #2d3748;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+/* Create component with bright styling */
+app-create {
+    display: block;
+    padding: 24px;
+    color: #1a202c;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+/* List component with light theme */
+app-list {
+    display: block;
+    padding: 0;
+    margin: 0;
+    color: #2d3748;
+}
+
+/* Enhanced transitions and hover effects */
+.admin-container mat-drawer,
+.product-container mat-drawer {
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.admin-container mat-drawer:hover {
+    box-shadow: 6px 0 30px rgba(0, 0, 0, 0.12), inset -1px 0 0 rgba(0, 0, 0, 0.08);
+}
+
+.product-container mat-drawer:hover {
+    box-shadow: 3px 0 25px rgba(0, 0, 0, 0.1), inset -1px 0 0 rgba(255, 255, 255, 0.6);
+    transform: translateX(2px);
+}
+
+/* Modern scrollbar styling */
+.admin-container mat-drawer::-webkit-scrollbar,
+.product-container mat-drawer::-webkit-scrollbar,
+.product-container mat-drawer-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.admin-container mat-drawer::-webkit-scrollbar-track,
+.product-container mat-drawer::-webkit-scrollbar-track,
+.product-container mat-drawer-content::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+}
+
+.admin-container mat-drawer::-webkit-scrollbar-thumb,
+.product-container mat-drawer::-webkit-scrollbar-thumb,
+.product-container mat-drawer-content::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, rgba(102, 126, 234, 0.6) 0%, rgba(118, 75, 162, 0.6) 100%);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.admin-container mat-drawer::-webkit-scrollbar-thumb:hover,
+.product-container mat-drawer::-webkit-scrollbar-thumb:hover,
+.product-container mat-drawer-content::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%);
+}
+
+/* Colorful glow effects for interactive elements */
+app-sidebar a:hover,
+app-create button:hover {
+    color: #667eea;
+    text-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
+    transition: all 0.3s ease;
+}
+
+/* Modern table styling */
+table,
+mat-table {
+    background: rgba(255, 255, 255, 0.95) !important;
+    color: #2d3748 !important;
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+th,
+mat-header-cell {
+    background: linear-gradient(90deg, rgba(102, 126, 234, 0.12) 0%, rgba(118, 75, 162, 0.12) 100%) !important;
+    color: #1a202c !important;
+    font-weight: 600;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+td,
+mat-cell {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+tr:hover,
+mat-row:hover {
+    background: rgba(102, 126, 234, 0.05) !important;
+    transition: background 0.2s ease;
+}
+
+/* Card and panel styling */
+.mat-card,
+.card,
+.panel {
+    background: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Button styling */
+button,
+.mat-button,
+.mat-raised-button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white !important;
+    border: none;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    transition: all 0.3s ease;
+}
+
+button:hover,
+.mat-button:hover,
+.mat-raised-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* Input fields */
+input,
+textarea,
+select,
+.mat-form-field {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #2d3748 !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .admin-container {
+        margin: 5px;
+        border-radius: 16px;
+    }
+
+    .admin-container mat-drawer {
+        width: 250px;
+    }
+
+    .product-container mat-drawer {
+        width: 300px;
+    }
+
+    app-sidebar,
+    app-create {
+        padding: 16px;
+    }
+}
+
+/* Accessibility and focus states */
+*:focus-visible {
+    outline: 2px solid rgba(102, 126, 234, 0.8);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Subtle animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.admin-container mat-drawer-content>* {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Badge and chip styling */
+.badge,
+.chip,
+.mat-chip {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%);
+    color: #667eea;
+    border: 1px solid rgba(102, 126, 234, 0.3);
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-weight: 500;
+}
+
+/* Status indicators */
+.status-success {
+    color: #10b981;
+    background: rgba(16, 185, 129, 0.1);
+}
+
+.status-warning {
+    color: #f59e0b;
+    background: rgba(245, 158, 11, 0.1);
+}
+
+.status-error {
+    color: #ef4444;
+    background: rgba(239, 68, 68, 0.1);
+}

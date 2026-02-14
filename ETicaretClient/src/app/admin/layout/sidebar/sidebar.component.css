@@ -1,0 +1,63 @@
+mat-list {
+  padding: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+mat-list-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+mat-list-item:last-child {
+  border-bottom: none;
+}
+
+mat-list-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(5px);
+}
+
+mat-list-item li {
+  list-style: none;
+  width: 100%;
+}
+
+mat-list-item a {
+  display: block;
+  padding: 16px 24px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+mat-list-item a::before {
+  content: '▸';
+  position: absolute;
+  left: 8px;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+mat-list-item:hover a::before {
+  opacity: 1;
+  left: 12px;
+}
+
+mat-list-item a:hover {
+  padding-left: 32px;
+  color: #ffd700;
+}
+
+/* Aktif link için */
+mat-list-item a.active {
+  background: rgba(255, 255, 255, 0.15);
+  border-left: 4px solid #ffd700;
+  color: #ffd700;
+}

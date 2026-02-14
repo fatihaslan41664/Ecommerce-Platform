@@ -1,0 +1,43 @@
+<div class="dialog-header">
+  <h2 mat-dialog-title>{{data.name}}</h2>
+  <span class="selected-badge">{{roleList.selectedOptions.selected.length}} Seçili</span>
+</div>
+
+<mat-dialog-content>
+  <p class="dialog-description">
+    <mat-icon>info</mat-icon>
+    Bu sayfaya erişim yetkisi vermek istediğiniz rolleri seçin
+  </p>
+  
+  <div class="roles-container">
+    <mat-selection-list #roleList>
+      @for (role of roles; track role.id) {
+        <mat-list-option 
+          [value]="role.id"
+          [selected]="isRoleAssigned(role.name)"
+          class="role-item">
+          <div class="role-content">
+            <span class="role-name">{{ role.name }}</span>
+            @if (isRoleAssigned(role.name)) {
+              <span class="assigned-badge">
+                <mat-icon>check_circle</mat-icon>
+                Atanmış
+              </span>
+            }
+          </div>
+        </mat-list-option>
+      }
+    </mat-selection-list>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="false">
+    <mat-icon>close</mat-icon>
+    İptal
+  </button>
+  <button mat-raised-button color="primary" (click)="assignRoles(roleList)">
+    <mat-icon>save</mat-icon>
+    Kaydet
+  </button>
+</mat-dialog-actions>

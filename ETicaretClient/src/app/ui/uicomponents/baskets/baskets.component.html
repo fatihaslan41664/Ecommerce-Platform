@@ -1,0 +1,54 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+    </div>
+    <div class="modal-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Urun Adı</th>
+                    <th scope="col">Fiyat</th>
+                    <th scope="col">Adet</th>
+                    <th scope="col">Arttır/Azalt</th>
+                    <th scope="col">sil</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let basketItem of basketItems let i = index">
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{basketItem.name}}</td>
+                    <td>{{basketItem.price}}</td>
+                    <td>{{basketItem.quantity}}</td>
+                    <td>
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-sm btn-outline-secondary"
+                                (click)="decreaseQuantity(basketItem.basketItemId, i)"
+                                [disabled]="basketItem.quantity <= 1 || updatingItems.has(basketItem.basketItemId)">
+                                -
+                            </button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary"
+                                (click)="increaseQuantity(basketItem.basketItemId, i)"
+                                [disabled]="updatingItems.has(basketItem.basketItemId)">
+                                +
+                            </button>
+                        </div>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-danger btn-sm"
+                            [disabled]="removingItems.has(basketItem.basketItemId)"
+                            (click)="removeItem(basketItem.basketItemId, i)">
+                            <span *ngIf="!removingItems.has(basketItem.basketItemId)">x</span>
+                            <span *ngIf="removingItems.has(basketItem.basketItemId)"
+                                class="spinner-border spinner-border-sm"></span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger" (click)="closeModal()">Kapat</button>
+        <button type="button" class="btn btn-primary" (click)="shoppingComplete()">Alışverişi Tamamla </button>
+    </div>
+</div>
